@@ -1,0 +1,162 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #141e30, #243b55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* Glass Card */
+#wrapper {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    padding: 35px;
+    border-radius: 20px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Headings */
+#wrapper h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+/* Info text */
+#wrapper p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Input */
+#guessField {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #1f1f2e;
+    color: white;
+    transition: 0.3s;
+}
+
+/* Glow effect */
+#guessField:focus {
+    box-shadow: 0 0 10px #00c9ff, 0 0 20px #00c9ff;
+}
+
+/* Button */
+#subt {
+    margin-top: 12px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#subt:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00c9ff;
+}
+
+#subt:active {
+    transform: scale(0.95);
+}
+
+/* Result section */
+.resultParas {
+    margin-top: 20px;
+}
+
+/* Previous guesses */
+.guesses {
+    color: #aaa;
+    font-weight: bold;
+}
+
+/* Remaining attempts */
+.lastResult {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Message styling */
+.lowOrHi h2 {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    animation: pop 0.3s ease;
+    background: rgba(255,255,255,0.1);
+}
+
+/* ✨ Smart color effects using text detection feel */
+.lowOrHi h2::before {
+    content: "💡 ";
+}
+
+/* Subtle glow animation */
+.lowOrHi h2 {
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* New Game Button */
+#newGame {
+    margin-top: 15px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+#newGame:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #ff758c;
+}
+
+/* Disabled input */
+#guessField:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0;}
+    to { transform: scale(1); opacity: 1;}
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    #wrapper {
+        width: 90%;
+        padding: 20px;
+    }
+}
